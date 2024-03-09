@@ -1,0 +1,330 @@
+/*
+===============================================================================
+Name        : products.html
+Assignment  : Assignment 2
+Author(s)   : Sarah Yip (UCID: 30174831), Stephenie Oboh (UCID: 30151629)
+Submission  : February 26, 2024
+Description : CSS Styles for Brick Vehicle Website 
+===============================================================================
+*/
+
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.headerLogo {
+    width:420px;
+}
+.headerCompanyName {
+    color: #ddd;
+    text-align: right;
+    width: 65%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Navigation Bar */
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    width: 100%;
+}
+
+.navBar a {
+    padding: 10px 20px; /* top and bottom padding 10px, left and right padding 20px */
+    color: white; /* Change link color to white for better visibility */
+    text-decoration: none; /* Remove underline from links */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.navBar a:hover {
+    background-color: #555; /* Darken background color on hover for better feedback */
+}
+
+.headTable, .navTable, .prodTable {
+    width: 100%;
+    height: 33px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 10px;
+    margin: 0px;
+    color: #fff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+
+
+/* INDEX */
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.aboutUs-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: #ddd;
+    text-align: left;
+}
+
+.aboutUs-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ddd;
+    font-size: 18px;
+}
+.ShopNow {
+    background-color: #fff;
+    justify-content: left;
+    margin: 0px;
+}
+
+.ShopNowButton {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    margin: 20px;
+}
+
+.CustomerReviews {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+}
+
+.CustomerReview-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: #ddd;
+}
+
+.CustomerReview-entry p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    background-color: #ddd;
+}
+
+.CustomerReview-entry img {
+    width: 30px;
+}
+
+
+
+/* CONTACT */
+.contactInfoSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.Contact-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: #ddd;
+    text-align: left;
+}
+
+.Contact-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    background-color: #ddd;
+
+}
+.Contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+.Contact-method h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    background-color: #ddd;
+}
+
+.Contact-method p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    background-color: #ddd;
+}
+
+.Contact-method p a:hover {
+    color: #007BFF;
+}
+
+
+
+
+/* PRODUCTS */
+
+/* Product List Section */
+
+.prodDisplay {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Product Container */
+.prodItem {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center; /* Align contents at the center */
+}
+
+.spacing {
+    background-color: #ddd;
+    width: 20px;
+}
+
+/* Product Image */
+.prodDisplay table td img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.prodDisplay table td h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+/* Price Text */
+.prodDisplay table td p {
+    color: #007BFF;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    
+}
+
+/* Add to Cart Button */
+.prodDisplay table td button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border: none; /* Remove button border */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+/* Change button background color on hover */
+.prodDisplay table td button:hover {
+    background-color: #45A049;
+}
+
+/* Change product container background color on hover */
+.prodItem:hover {
+    background-color: #ffffff;
+}
+
+
+
+
+/* LOGIN */
+
+/* Login Form Section */
+.userInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Align content horizontally */
+    align-items: center; /* Align content vertically */
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* Form Fields */
+.userLogin {
+    display: block;
+    width: 50%; /* Set the width of the form */
+    margin: 20px;
+}
+
+.userLogin label {
+    display: block; /* Display labels in block containers */
+    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+
+}
+
+.userLogin p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.userLogin input[type="text"], form input[type="password"] {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 50%; 
+}
+
+/* Login Button */
+.userLogin button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    opacity: 0.5;
+    transition: background-color 0.3s, opacity 0.3s; /* Smooth transition */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+    
+}
+
+/* Change button background color and opacity on hover */
+.userLogin button:hover {
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+/* Signup Link */
+.noAcc a {
+    color: #007BFF;
+    margin: 10px;
+    text-decoration: none; /* Remove default underline */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+/* Add underline on hover */
+.noAcc a:hover {
+    text-decoration: underline;
+}
