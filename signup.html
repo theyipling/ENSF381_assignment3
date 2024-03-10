@@ -42,25 +42,62 @@ TODO:
     </div>
 
     <main class = "signupDisplay">
-        <form onsubmit = "return validateNewAccount()">
-            <label for="Newusername">Username:</label><br>
-            <input type="text" id="Newusername" name="Newusername" placeholder="Enter username" required pattern="[a-zA-Z][a-zA-Z0-9-_]{2,19}" required><br>
-            <label for="Newpassword">Password:</label><br>
-            <input type="password" id="Newpassword" name="Newpassword" placeholder="Enter password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$" required ><br>
+        <form onsubmit = "return checkNewAccount()">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter username" required pattern="[a-zA-Z][a-zA-Z0-9-_]{2,19}" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$" required ><br>
             <label for="confirm-password">Confirm Password:</label><br>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required><br>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" placeholder="Enter email" required>
             <button type="submit">Signup</button>
         </form>
-
-
-        
     </main>
 
     <footer>
         <br>
         <p>&copy; 2024 Make 'N Model. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function checkNewAccount() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var email = document.getElementById('email').value;
+            var messageBox = document.getElementById('message-box');
+            var message = document.getElementById('message');
+
+            if (username.length < 3 || username.length > 20 || !/^[a-zA-Z][a-zA-Z0-9-_]{2,19}$/.test(username)) {
+                message.innerHTML = 'Invalid username format';
+                messageBox.style.display = 'block';
+                return false;
+            }
+
+            if (password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$/.test(password)) {
+                message.innerHTML = 'Invalid password format';
+                messageBox.style.display = 'block';
+                return false;
+            }
+
+            if (confirmPassword !== password) {
+                message.innerHTML = 'Passwords do not match';
+                messageBox.style.display = 'block';
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                message.innerHTML = 'Invalid email format';
+                messageBox.style.display = 'block';
+                return false;
+            }
+
+            message.innerHTML = 'Signup successful';
+            messageBox.style.display = 'block';
+        }
+
+    </script>
 </body>
 </html>
+
