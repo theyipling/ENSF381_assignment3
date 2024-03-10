@@ -3,14 +3,14 @@
 Name        : products.html
 Assignment  : Assignment 3
 Author(s)   : Sarah Yip (UCID: 30174831), Stephenie Oboh (UCID: 30151629)
-Submission  : march 9, 2024
+Submission  : March 9, 2024
 Description : Product page for Brick Vehicle Website 
 =========================================================
 -->
 
 <!--
 TODO:
-    - add space between white containers ? 
+    Should script be its own js file or inside this file???
 -->
 
 <!DOCTYPE html>
@@ -18,9 +18,9 @@ TODO:
 
 <head>
     <title>Make 'N Model - Products</title>
-    <link rel="Stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
-
 
 <body id="products">
     <header>
@@ -108,8 +108,78 @@ TODO:
                     </td>
                 </tr>
             </table>
+        <div class="shoppingCart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart"></ul>
+        </div>
     </main>
 
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const addToCartButtons = document.querySelectorAll('.prodItem button');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+
+            function addToCart(event) {
+                const productItem = event.target.closest('.prodItem');
+                const productName = productItem.querySelector('h2').textContent;
+                const productPrice = productItem.querySelector('p').textContent;
+                const cartItem = document.querySelector(`[data-product="${productName}"]`);
+
+                if (cartItem) {
+                    const quantityElement = cartItem.querySelector('.quantity');
+                    let quantity = parseInt(quantityElement.textContent);
+                    quantity++;
+                    quantityElement.textContent = quantity;
+                } else {
+                    const cart = document.getElementById('cart');
+                    const cartItem = document.createElement('li');
+                    cartItem.setAttribute('data-product', productName);
+                    cartItem.innerHTML = `
+                        <span>${productName}</span> - ${productPrice.slice(productPrice.indexOf('$'))} - <span class="quantity">1</span>
+                        <button class="removeButton">Remove</button>
+                    `;
+                    cart.appendChild(cartItem);
+                }
+
+                alert('Product added to cart.');
+
+                updateRemoveButtons();
+            }
+
+            function updateRemoveButtons() {
+                const removeButtons = document.querySelectorAll('.removeButton');
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', removeFromCart);
+                    button.addEventListener('mouseover', changeButtonColor);
+                    button.addEventListener('mouseout', resetButtonColor);
+                });
+            }
+
+            function removeFromCart(event) {
+                const cartItem = event.target.closest('li');
+                const quantityElement = cartItem.querySelector('.quantity');
+                let quantity = parseInt(quantityElement.textContent);
+                quantity--;
+                if (quantity === 0) {
+                    cartItem.remove();
+                } else {
+                    quantityElement.textContent = quantity;
+                }
+            }
+
+            function changeButtonColor(event) {
+                event.target.style.backgroundColor = '#ff0000';
+            }
+
+            function resetButtonColor(event) {
+                event.target.style.backgroundColor = '#4CAF50';
+            }
+        });
+    </script> -->
+    
     <footer>
         <p>&copy; 2024 Make 'N Model. All Rights Reserved.</p>
     </footer>
