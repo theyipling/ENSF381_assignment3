@@ -42,28 +42,67 @@ TODO:
     </div>
 
 
-    <main class="userInfo">
-        <br>
-        <br>
-        <form class="userLogin">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    <main>
+        <div class="userInfo">
+            <br>
+            <br>
+            <div class="userLogin" >
+                <form onsubmit="return validateForm()">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-            <button type="button">Login</button>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="noAcc">Don't have an account? <a href="signup.html">Sign up here .</a></p>
+                <br>
+            </div>
+        </div>
 
-            <p class="noAcc">Don't have an account? <a href="signup.html">Sign up here .</a></p>
-        </form>
-        <br>
-        
+        <div class = "checkUser" id="checkUser" style = "display: none;">
+            <p id="message"></p>
     </main>
 
     <footer>
         <br>
         <p>&copy; 2024 Make 'N Model. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function validateForm(){
+            var usernameInput = document.getElementById('username').value
+            var passwordInput = document.getElementById('password').value
+            var messageSection = document.getElementById('checkUser')
+            var message = document.getElementById('message')
+
+            const apiURL = 'https://jsonplaceholder.typicode.com/users'
+            fetch(apiURL)
+                .then(response => {
+                    if (!response.ok){
+                        throw new Error('There is an error in fetching your account from the API')
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const matchedUser = data.find(user => user.name === usernameInput && user.email === passwordInput);
+                    if (matchedUser) {
+                        message.innerHTML = 'Login successful';
+                    } 
+                    else {
+                        message.innerHTML = 'Invalid username or password. Please try again.';
+                    }
+                    messageSection.style.display = 'block';
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+                return false;
+
+        }
+    </script>
+        
 </body>
 </html>
 

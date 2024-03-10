@@ -383,3 +383,15 @@ footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
 }
+
+.checkUser {
+    border: 2px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px;
+}
+
+.checkUser p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
