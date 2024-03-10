@@ -41,18 +41,23 @@ TODO:
         </table>
     </div>
 
-    <main class = "signupDisplay">
-        <form onsubmit = "return checkNewAccount()">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" placeholder="Enter username" required pattern="[a-zA-Z][a-zA-Z0-9-_]{2,19}" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" placeholder="Enter password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$" required ><br>
-            <label for="confirm-password">Confirm Password:</label><br>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Enter email" required>
-            <button type="submit">Signup</button>
-        </form>
+    <main >
+        <div class = "signupDisplay">
+            <form onsubmit = "return validateForm()">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="Enter username" required pattern="[a-zA-Z][a-zA-Z0-9-_]{2,19}" required><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$" required ><br>
+                <label for="confirm-password">Confirm Password:</label><br>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+
+        <div class = "submissionMessage" id="submissionMessage" style = "display: none;">
+            <p id="message"></p>
     </main>
 
     <footer>
@@ -61,42 +66,40 @@ TODO:
     </footer>
 
     <script>
-        function checkNewAccount() {
+        function validateForm() {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirm-password').value;
             var email = document.getElementById('email').value;
-            var messageBox = document.getElementById('message-box');
+            var messageSection = document.getElementById('submissionMessage');
             var message = document.getElementById('message');
+            var errors = [];
 
             if (username.length < 3 || username.length > 20 || !/^[a-zA-Z][a-zA-Z0-9-_]{2,19}$/.test(username)) {
-                message.innerHTML = 'Invalid username format';
-                messageBox.style.display = 'block';
-                return false;
+                errors.push('Check the username');
             }
 
             if (password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:',.<>?/`~]{8,}$/.test(password)) {
-                message.innerHTML = 'Invalid password format';
-                messageBox.style.display = 'block';
-                return false;
+                errors.push('Check the password');
             }
 
             if (confirmPassword !== password) {
-                message.innerHTML = 'Passwords do not match';
-                messageBox.style.display = 'block';
-                return false;
+                errors.push('Passwords do not match');
             }
 
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                message.innerHTML = 'Invalid email format';
-                messageBox.style.display = 'block';
+                errors.push('Invalid email');
+            }
+
+            if (errors.length > 0) {
+                message.innerHTML = errors.join('<br>');
+                submissionMessage.style.display = 'block';
                 return false;
             }
 
             message.innerHTML = 'Signup successful';
-            messageBox.style.display = 'block';
+            submissionMessage.style.display = 'block';
         }
-
     </script>
 </body>
 </html>

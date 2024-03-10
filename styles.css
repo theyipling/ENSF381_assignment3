@@ -371,3 +371,15 @@ footer {
     background-color: #45A049;
     opacity: 1;
 }
+
+.submissionMessage {
+    border: 2px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px;
+}
+
+.submissionMessage p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
