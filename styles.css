@@ -3,7 +3,7 @@
 Name        : products.html
 Assignment  : Assignment 3
 Author(s)   : Sarah Yip (UCID: 30174831), Stephenie Oboh (UCID: 30151629)
-Submission  : march 29, 2024
+Submission  : march 9, 2024
 Description : CSS Styles for Brick Vehicle Website 
 ===============================================================================
 */
@@ -327,4 +327,47 @@ footer {
 /* Add underline on hover */
 .noAcc a:hover {
     text-decoration: underline;
+}
+
+
+/* signup page  */
+.signupDisplay {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ddd;
+}
+
+.signupDisplay label{
+    display: block;
+    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.signupDisplay input{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.signupDisplay button{
+    background-color: #4CAF50;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity:0.5;
+    border: 0px;
+}
+
+.signupDisplay button:hover {
+    background-color: #45A049;
+    opacity: 1;
 }
