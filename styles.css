@@ -373,10 +373,11 @@ footer {
 }
 
 .submissionMessage {
-    border: 2px;
+    border: 2px solid black;
     background-color: #f9f9f9;
     padding: 10px;
     margin: 20px;
+    border-color: #333;
 }
 
 .submissionMessage p {
@@ -385,10 +386,11 @@ footer {
 }
 
 .checkUser {
-    border: 2px;
+    border: 2px solid black;
     background-color: #f9f9f9;
     padding: 10px;
     margin: 20px;
+    border-color: #333;
 }
 
 .checkUser p {
